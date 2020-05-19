@@ -199,6 +199,10 @@ namespace Calculadora
                     }
                     label_calculando.Text = "0";
                 }
+                else
+                {
+                    error(2);
+                }
                 n2 = 0;
 
             }
@@ -242,6 +246,10 @@ namespace Calculadora
                     }
                     label_calculando.Text = "0";
                 }
+                else
+                {
+                    error(2);
+                }
                 n2 = 0;
 
             }
@@ -269,6 +277,10 @@ namespace Calculadora
                         label_resultado.Text += Convert.ToString(label_calculando.Text) + operador;
                     }
                     label_calculando.Text = "0";
+                }
+                else
+                {
+                    error(2);
                 }
                 n2 = 0;
 
@@ -298,6 +310,10 @@ namespace Calculadora
                     }
                     label_calculando.Text = "0";
                 }
+                else
+                {
+                    error(2);
+                }
                 n2 = 0;
             }
             catch
@@ -311,17 +327,23 @@ namespace Calculadora
             try
             {
                 n2 = double.Parse(label_calculando.Text);
-                operar();
-                ans = n1;
-                label_calculando.Text = Convert.ToString(ans);
-                label_resultado.Text = "0";
-                n1 = 0;
-                n2 = 0;
-                operador = '+';
+                if (operar() == 1)
+                {
+                    ans = n1;
+                    label_calculando.Text = Convert.ToString(ans);
+                    label_resultado.Text = "0";
+                    n1 = 0;
+                    n2 = 0;
+                    operador = '+';
+                }
+                else
+                {
+                    error(2);
+                }
             }
             catch
             {
-                error(2);
+                error(1);
             }
         }
 
@@ -348,7 +370,6 @@ namespace Calculadora
                 }
                 else
                 {
-                    error(2);
                     n1 = 0;
                     n2 = 0;
                     verificador = 0;
