@@ -179,8 +179,11 @@ namespace Calculadora
 
         private void button_AC_Click(object sender, EventArgs e)
         {
-            label_calculando.Text = "";
+            label_calculando.Text = "0";
+            label_resultado.Text = "0";
             n2 = 0;
+            n1 = 0;
+            operador = '+';
         }
 
         private void button_plus_Click(object sender, EventArgs e)
