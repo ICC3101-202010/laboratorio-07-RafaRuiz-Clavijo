@@ -49,6 +49,13 @@
             this.button_minus = new System.Windows.Forms.Button();
             this.label_calculando = new System.Windows.Forms.Label();
             this.label_resultado = new System.Windows.Forms.Label();
+            this.button_hist = new System.Windows.Forms.Button();
+            this.panel_hist = new System.Windows.Forms.Panel();
+            this.label_hist_calculo = new System.Windows.Forms.Label();
+            this.label_historial = new System.Windows.Forms.Label();
+            this.button_volver = new System.Windows.Forms.Button();
+            this.button_borrar_hist = new System.Windows.Forms.Button();
+            this.panel_hist.SuspendLayout();
             this.SuspendLayout();
             // 
             // button_7
@@ -193,9 +200,9 @@
             // 
             // button_equal
             // 
-            this.button_equal.Location = new System.Drawing.Point(260, 388);
+            this.button_equal.Location = new System.Drawing.Point(346, 388);
             this.button_equal.Name = "button_equal";
-            this.button_equal.Size = new System.Drawing.Size(147, 40);
+            this.button_equal.Size = new System.Drawing.Size(61, 40);
             this.button_equal.TabIndex = 14;
             this.button_equal.Text = "=";
             this.button_equal.UseVisualStyleBackColor = true;
@@ -262,11 +269,76 @@
             this.label_resultado.TabIndex = 20;
             this.label_resultado.Text = "0";
             // 
+            // button_hist
+            // 
+            this.button_hist.Location = new System.Drawing.Point(260, 388);
+            this.button_hist.Name = "button_hist";
+            this.button_hist.Size = new System.Drawing.Size(61, 40);
+            this.button_hist.TabIndex = 21;
+            this.button_hist.Text = "HIST";
+            this.button_hist.UseVisualStyleBackColor = true;
+            this.button_hist.Click += new System.EventHandler(this.button_hist_Click);
+            // 
+            // panel_hist
+            // 
+            this.panel_hist.Controls.Add(this.button_borrar_hist);
+            this.panel_hist.Controls.Add(this.button_volver);
+            this.panel_hist.Controls.Add(this.label_historial);
+            this.panel_hist.Controls.Add(this.label_hist_calculo);
+            this.panel_hist.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_hist.Location = new System.Drawing.Point(0, 0);
+            this.panel_hist.Name = "panel_hist";
+            this.panel_hist.Size = new System.Drawing.Size(437, 450);
+            this.panel_hist.TabIndex = 22;
+            this.panel_hist.Visible = false;
+            // 
+            // label_hist_calculo
+            // 
+            this.label_hist_calculo.AutoSize = true;
+            this.label_hist_calculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_hist_calculo.Location = new System.Drawing.Point(20, 39);
+            this.label_hist_calculo.Name = "label_hist_calculo";
+            this.label_hist_calculo.Size = new System.Drawing.Size(205, 25);
+            this.label_hist_calculo.TabIndex = 0;
+            this.label_hist_calculo.Text = "Historial de calculos";
+            // 
+            // label_historial
+            // 
+            this.label_historial.AutoSize = true;
+            this.label_historial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_historial.Location = new System.Drawing.Point(27, 93);
+            this.label_historial.Name = "label_historial";
+            this.label_historial.Size = new System.Drawing.Size(36, 20);
+            this.label_historial.TabIndex = 1;
+            this.label_historial.Text = "ans";
+            // 
+            // button_volver
+            // 
+            this.button_volver.Location = new System.Drawing.Point(42, 372);
+            this.button_volver.Name = "button_volver";
+            this.button_volver.Size = new System.Drawing.Size(150, 38);
+            this.button_volver.TabIndex = 2;
+            this.button_volver.Text = "Volver";
+            this.button_volver.UseVisualStyleBackColor = true;
+            this.button_volver.Click += new System.EventHandler(this.button_volver_Click);
+            // 
+            // button_borrar_hist
+            // 
+            this.button_borrar_hist.Location = new System.Drawing.Point(234, 372);
+            this.button_borrar_hist.Name = "button_borrar_hist";
+            this.button_borrar_hist.Size = new System.Drawing.Size(150, 38);
+            this.button_borrar_hist.TabIndex = 3;
+            this.button_borrar_hist.Text = "Borrar Historial";
+            this.button_borrar_hist.UseVisualStyleBackColor = true;
+            this.button_borrar_hist.Click += new System.EventHandler(this.button_borrar_hist_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(437, 450);
+            this.Controls.Add(this.panel_hist);
+            this.Controls.Add(this.button_hist);
             this.Controls.Add(this.label_resultado);
             this.Controls.Add(this.label_calculando);
             this.Controls.Add(this.button_minus);
@@ -290,6 +362,8 @@
             this.Controls.Add(this.button_7);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.panel_hist.ResumeLayout(false);
+            this.panel_hist.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,6 +392,12 @@
         private System.Windows.Forms.Button button_minus;
         private System.Windows.Forms.Label label_calculando;
         private System.Windows.Forms.Label label_resultado;
+        private System.Windows.Forms.Button button_hist;
+        private System.Windows.Forms.Panel panel_hist;
+        private System.Windows.Forms.Button button_borrar_hist;
+        private System.Windows.Forms.Button button_volver;
+        private System.Windows.Forms.Label label_historial;
+        private System.Windows.Forms.Label label_hist_calculo;
     }
 }
 

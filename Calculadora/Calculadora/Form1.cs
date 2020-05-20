@@ -18,6 +18,9 @@ namespace Calculadora
         double n2 = 0;
         char operador = '+';
 
+        List<string> operaciones = new List<string>();
+        List<double> resultados = new List<double>();
+
         public Form1()
         {
             InitializeComponent();
@@ -330,6 +333,9 @@ namespace Calculadora
                 if (operar() == 1)
                 {
                     ans = n1;
+                    label_resultado.Text += n2;
+                    resultados.Add(ans);
+                    operaciones.Add(label_resultado.Text);
                     label_calculando.Text = Convert.ToString(ans);
                     label_resultado.Text = "0";
                     n1 = 0;
@@ -376,6 +382,29 @@ namespace Calculadora
                 }
             }
             return verificador;
+        }
+
+        private void button_volver_Click(object sender, EventArgs e)
+        {
+            panel_hist.Visible = false;
+        }
+
+        private void button_hist_Click(object sender, EventArgs e)
+        {
+            panel_hist.Visible = true;
+            label_historial.Text = "";
+            for (int i = 0; i < resultados.Count(); i++)
+            {
+                label_historial.Text += operaciones[i] + " = " + resultados[i] +"\n";
+            }
+
+        }
+
+        private void button_borrar_hist_Click(object sender, EventArgs e)
+        {
+            resultados.Clear();
+            operaciones.Clear();
+            label_historial.Text = "";
         }
     }
 }
